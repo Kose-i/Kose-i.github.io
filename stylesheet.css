@@ -12,3 +12,13 @@ body{
   font-family: "Avenir Next";
   background-color:#ffd800;
 }
+.header{
+}
+.main{
+}
+.footer{
+}
+li{
+  list-style:none;
+  color:red;
+}
