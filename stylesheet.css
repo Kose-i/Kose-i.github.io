@@ -12,9 +12,11 @@ body{
 }
 .header{
   font-size: 10px;
+  font-color: red;
 }
 .main{
   font-size: 40px;
+  font-color: red;
 }
 .footer{
   font-size: 40px;
