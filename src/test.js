@@ -1,4 +1,4 @@
 document.write("test2");
-for (var i in 1..4) {
+for (i = 0;i < 4;++i) {
   document.write(i);
 }
