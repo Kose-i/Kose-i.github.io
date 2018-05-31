@@ -1,3 +1,3 @@
-document.out("test2");
+document.write("test2");
 var a = 2;
-document.out("%d", a);
+document.write("%d", a);
