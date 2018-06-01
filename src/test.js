@@ -1,5 +1,5 @@
 
-function print(){
+function myprint(){
   document.write(test.score);
 }
 
