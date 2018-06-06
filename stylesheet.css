@@ -25,7 +25,11 @@ li{
   list-style:none;
   color:red;
 }
+.test_src{
+  font-size: 50px;
+  font-color: black;
+}
 script{
   font-size: 40px;
-  font-color: pink;
+  font-color: black;
 }
