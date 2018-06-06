@@ -32,4 +32,6 @@ li{
 script{
   font-size: 40px;
   font-color: black;
+  width: 100px;
+  height: 40px;
 }
