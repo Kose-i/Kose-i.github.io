@@ -25,13 +25,9 @@ li{
   list-style:none;
   color:red;
 }
-.test_src{
-  font-size: 50px;
-  font-color: black;
-}
 script{
   font-size: 40px;
   font-color: black;
-  width: 10px;
-  height: 40px;
+  width: 1350px;
+  height: 80px;
 }
