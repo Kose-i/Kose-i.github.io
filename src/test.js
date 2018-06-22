@@ -1,3 +1,4 @@
+"use strict"
 function my_print(){
   document.write("page");
   //document.write(test.name);
@@ -6,6 +7,6 @@ function my_print(){
   //}
 }
 
-function myfunc(let object) {
+function myfunc(object) {
   document.write(object);
 }
