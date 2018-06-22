@@ -1,4 +1,3 @@
-"using strict";
 function my_print(){
   document.write("page");
   //document.write(test.name);
