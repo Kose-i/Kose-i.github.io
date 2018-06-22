@@ -7,3 +7,6 @@ function my_print(){
   //}
 }
 
+function myfunc(let object) {
+  document.write(object);
+}
