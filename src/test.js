@@ -1,6 +1,6 @@
 "use strict"
-function my_print(){
-  document.write("not object");
+function (){
+  document.write("%d %d %d %d %d %d");
 }
 
 function my_print(object) {
