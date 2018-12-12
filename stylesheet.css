@@ -1,18 +1,38 @@
+.header-logo{
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+
+  font-size: 20px;
+  font-color:red;
+  float:left;
+}
+.header-list{
+  float:right;
+  font-size: 15px;
+  font-color:black;
+}
 h1{
   color:#ff0000;
   font-size: 20px;
   font-family: serif;
   background-color: yellow;
 }
+h2{
+  color:#ff0000;
+  font-size: 20px;
+  font-family: serif;
+  background-color: black;
+}
 body{
-  color:#0000ff;
-  font-size: 3px;
   font-family: "Avenir Next";
   background-color:#ffd800;
 }
 .left{
   font-size: 10px;
   font-color: red;
+  float:left;
 }
 .center{
   font-size: 40px;
@@ -22,6 +42,7 @@ body{
 .right{
   font-size: 40px;
   background-color:yellow;
+  float:right;
 }
 li{
   list-style:none;
