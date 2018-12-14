@@ -1,6 +1,13 @@
 # Kose-i.github.io
-## html and JavaScript tutorial
 
-### This is tutorial html and JavaScript.
+## Description
 
-##nutriation balance param
+  This is using HTML5 and using Javascript.
+
+## TARGET
+
+  all user
+
+## PURPOSE
+  
+  I try to practice html5 and javascript
