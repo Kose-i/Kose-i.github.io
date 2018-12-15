@@ -17,11 +17,11 @@ header{
 }
 .header-logo{
   padding-top: 5px;
-  /*padding-right: 10px;*/
+  padding-right: 10px;
   padding-bottom: 20px;
   padding-left: 10px;
 
-  font-size: 20px;
+  font-size: 150%;
   font-color:red;
   float:left;
 }
@@ -29,11 +29,12 @@ header{
   width:30px;
   height:30px;
   float:left;
+  border:solid 1px aqua;
 }
 .header-list{
   padding-right:10px;
   float:right;
-  font-size: 15px;
+  font-size: 100%;
   font-color:black;
   font-family:serif;
   border:solid 1px black;
@@ -49,7 +50,7 @@ main#A{
   width:100%;
 }
 #extra{
-  font-size: 10px;
+  font-size: 100%;
   font-color: red;
   float:right;
   width:150px;
