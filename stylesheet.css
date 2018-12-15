@@ -6,10 +6,14 @@
   border:solid 1px black;
 }
 header{
-  background-color:black;
   width:100%;
   height:100px;
   margin-bottom:15px;
+  border:solid 1px black;
+}
+img{
+  width:30px;
+  height:30px;
 }
 main#test{
   width:100%;
@@ -26,8 +30,7 @@ main#A{
   font-color: red;
   float:right;
   width:150px;
-  height:50px;
-  background-color:black;
+  border:2px solid blue;
 }
 main#B{
   margin-right:160px;
@@ -58,7 +61,6 @@ footer{
   width:100%;
   height:50px;
 }
-/*
 .header-logo{
   padding-top: 5px;
   padding-right: 10px;
@@ -70,10 +72,6 @@ footer{
   font-color:red;
   float:left;
 }
-#header-logo img{
-  width:30px;
-  height:30px;
-}
 #header-list{
   float:right;
   font-size: 15px;
@@ -84,4 +82,3 @@ li{
   list-style:none;
   color:red;
 }
-*/
