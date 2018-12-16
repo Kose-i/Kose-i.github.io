@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="css/nutrition_checker.css">
     <title>nutrition-checker</title>
   </head>
+
   <body>
     <header>
     </header>
@@ -90,14 +91,15 @@
             document.write("<tr id='kind"+i+"'>");
             document.write("<td>kind"+i+"</td>");
             for (var j = 0;j < 63;++j) {
-              document.write("<td></td>");
+              document.write("<td id='kind"+i+"-"+j+"'></td>");
             }
           }
         </script>
-      </table>
 
       </table>
+
     </main>
+
     <footer>
     </footer>
   </body>
