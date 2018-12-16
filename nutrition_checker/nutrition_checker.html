@@ -1,23 +1,102 @@
 <html>
   <head>
-    <link rel="stylesheet" href="css/nutrition.css">
+    <link rel="stylesheet" href="css/nutrition_checker.css">
+    <title>nutrition-checker</title>
   </head>
   <body>
     <header>
-      <h1>nutrition</h1>
     </header>
+
     <main>
-      <tr id="kind">
-        <th>kind</th>
-        <td>check</td>
-      </tr>
-      <script type="text/javascript">
-        for (var i = 1;i <= 10;++i) {
-          document.write("<tr id='param"+i+"'>");
-          document.write("<th>0</th>");
-          document.write("</tr>");
-        }
-      </script>
+     <table border="1" bordercolor="#333333" cellspacing="0" cellpadding="5">
+        <tr id="kind">
+          <th width="150">食品名</th>
+          <th>廃 棄 率</th>
+          <th>エネルギー（kcal）</th>
+          <th>エネルギー（kJ)</th>
+          <th>水   分</th>
+          <th>たんぱく質</th>
+          <th>アミノ酸組成によるたんぱく質</th>
+          <th>脂   質</th>
+          <th>トリアシルグリセロール当量</th>
+          <th>飽和脂肪酸</th>
+          <th>一価不飽和脂肪酸</th>
+          <th>多価不飽和脂肪酸</th>
+          <th>コレステロール</th>
+          <th>炭水化物</th>
+          <th>利用可能炭水化物（単糖当量）</th>
+          <th>水溶性食物繊維</th>
+          <th>不溶性食物繊維</th>
+          <th>食物繊維総量</th>
+          <th>灰   分</th>
+          <th>ナトリウム</th>
+          <th>カリウム</th>
+          <th>カルシウム</th>
+          <th>マグネシウム</th>
+          <th>リン</th>
+          <th>鉄</th>
+          <th>亜鉛</th>
+          <th>銅</th>
+          <th>マンガン</th>
+          <th>ヨウ素</th>
+          <th>セレン</th>
+          <th>クロム</th>
+          <th>モリブデン</th>
+          <th>レチノール</th>
+          <th>α-カロテン</th>
+          <th>β-カロテン</th>
+          <th>β-クリプトキサンチン</th>
+          <th>β-カロテン当量</th>
+          <th>レチノール活性当量</th>
+          <th>ビタミンD</th>
+          <th>α-トコフェロール</th>
+          <th>β-トコフェロール</th>
+          <th>γ-トコフェロール</th>
+          <th>δ-トコフェロール</th>
+          <th>ビタミンK</th>
+          <th>ビタミンB1</th>
+          <th>ビタミンB2</th>
+          <th>ナイアシン</th>
+          <th>ビタミンB6</th>
+          <th>ビタミンB12</th>
+          <th>葉酸</th>
+          <th>パントテン酸</th>
+          <th>ビオチン</th>
+          <th>ビタミンC</th>
+          <th>食塩相当量</th>
+          <th>アルコール</th>
+          <th>硝酸イオン</th>
+          <th>テオブロミン</th>
+          <th>カフェイン</th>
+          <th>タンニン</th>
+          <th>ポリフェノール</th>
+          <th>酢酸</th>
+          <th>調理油</th>
+          <th>有機酸</th>
+          <th>重量変化率</th>
+        </tr>
+
+        <tr id="sum_nutrition">
+          <td>合計</td>
+          <script>
+            for (var j = 0;j < 63;++j) {
+              document.write("<td></td>");
+            }
+          </script>
+        </tr>
+
+        <script type="text/javascript">
+          for (var i = 0;i < 10;++i) {
+            document.write("<tr id='kind"+i+"'>");
+            document.write("<td>kind"+i+"</td>");
+            for (var j = 0;j < 63;++j) {
+              document.write("<td></td>");
+            }
+          }
+        </script>
+      </table>
+
+      </table>
     </main>
     <footer>
     </footer>
