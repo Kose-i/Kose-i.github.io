@@ -1,13 +1,20 @@
 <html>
   <head>
+    <link rel="stylesheet" href="css/stylesheet.css">
     <title>Slide_puzzle</title>
     <script type="text/javascript">
 
       var empty = 15;
       var Imgs = new Array(16);
-        for (var i = 0;i < 16;++i) {
-          Imgs[i] = "./img/github-profile.png";
-        }
+      for (var i = 0;i < 16;++i) {
+        Imgs[i] = "./img/github-profile.png";
+      }
+
+      /*for (var i = 0;i < 15;++i) {
+        Imgs[i] = "./img/github-profile.png";
+      }
+      Imgs[15] = "./img/blank.png";
+      */
 
       function shuffle()
       {
@@ -34,6 +41,7 @@
 
     <input type="button" value="start!" onClick="split()">
 
+    <hr>
     <script>
       for (var i = 0;i < 16;++i) {
         document.write("<img src='"+Imgs[i]+"' name='"+i+"' onclick=moveImg(this)>");
@@ -42,5 +50,9 @@
         }
       }
     </script>
+    <hr>
+
+    <footer>
+    </footer>
   </body>
 </html>
