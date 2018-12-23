@@ -5,7 +5,8 @@
     <script type="text/javascript">
 
       var empty = 15;
-      var Imgs = new Array(16);
+      var Imgs = new Array(16);//answer
+      var Pos = new Array(16);//public
       for (var i = 0;i < 16;++i) {
         Imgs[i] = "./img/github-profile.png";
       }
@@ -19,15 +20,27 @@
       function shuffle()
       {
       }
-      function split()
+      function split(SourceImg)
       {
+        for (var i = 0;i < 4;++i) {
+          for (var j = 0;j < 4;++j) {
+          Imgs[i] = drawImage(SourceImg, x, y, width, height,  0, 0, width, height);
+          }
+        }
       }
-      function moveImg()
+      function moveImg(img)
       {
+        alert(img.name);
       }
       function isAnswer()
       {
-        return false;
+        for (var i = 0;i < 16;++i) {
+          if (i == 15 && Pos[i].name == blank_img) {
+            return true;
+          } else if (Imgs[i].name != i) {
+            return false;
+          }
+        }
       }
       function checkCount()
       {
@@ -44,7 +57,7 @@
     <hr>
     <script>
       for (var i = 0;i < 16;++i) {
-        document.write("<img src='"+Imgs[i]+"' name='"+i+"' onclick=moveImg(this)>");
+        document.write("<img src='"+Imgs[i]+"' name='"+i+"' onclick='moveImg(this)'>");
         if (i % 4 == 3) {
           document.write("<br/>");
         }
