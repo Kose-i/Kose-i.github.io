@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Slide_puzzle</title>
+    <script type="text/javascript">
+
+      var empty = 15;
+      var Imgs = new Array(16);
+        for (var i = 0;i < 16;++i) {
+          Imgs[i] = "./img/github-profile.png";
+        }
+
+      function shuffle()
+      {
+      }
+      function split()
+      {
+      }
+      function moveImg()
+      {
+      }
+      function isAnswer()
+      {
+        return false;
+      }
+      function checkCount()
+      {
+        setTimeOut(checkCount, 1000);
+      }
+    </script>
+  </head>
+
+  <body>
+    <header>slide_puzzle 15</header>
+
+    <input type="button" value="start!" onClick="split()">
+
+    <script>
+      for (var i = 0;i < 16;++i) {
+        document.write("<img src='"+Imgs[i]+"' name='"+i+"' onclick=moveImg(this)>");
+        if (i % 4 == 3) {
+          document.write("<br/>");
+        }
+      }
+    </script>
+  </body>
+</html>
