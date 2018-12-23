@@ -2,6 +2,30 @@
   <head>
     <link rel="stylesheet" href="css/nutrition_checker.css">
     <title>nutrition-checker</title>
+    <script src="text/javascript">
+      function add_food()
+      {
+        var tableBody = getElementById("sum_nutrition");
+
+        var trTag = doucment.createElement("tr");
+
+        document.body.insertBefore(trTag, tableBody);
+      }
+
+      function sum_food(){}
+    </script>
+
+    <!-- >
+    <script type="text/javascript">
+      //for (var i = 0;i < 10;++i) {
+      //   document.write("<tr id='kind"+i+"'>");
+      //   document.write("<td>kind"+i+"</td>");
+      //   for (var j = 0;j < 63;++j) {
+      //     document.write("<td id='kind"+i+"-"+j+"'></td>");
+      //   }
+      // }
+    </script>
+    < -->
   </head>
 
   <body>
@@ -9,7 +33,11 @@
     </header>
 
     <main>
-     <table border="1" bordercolor="#333333" cellspacing="0" cellpadding="5">
+
+      <input type="button" value="Add" onclick="add_food"/>
+      <input type="button" value="Calc" onclick="sum_food">
+
+      <table border="1" bordercolor="#333333" cellspacing="0" cellpadding="5">
         <tr id="kind">
           <th width="150">食品名</th>
           <th>廃 棄 率</th>
@@ -85,18 +113,10 @@
             }
           </script>
         </tr>
-
-        <script type="text/javascript">
-          for (var i = 0;i < 10;++i) {
-            document.write("<tr id='kind"+i+"'>");
-            document.write("<td>kind"+i+"</td>");
-            for (var j = 0;j < 63;++j) {
-              document.write("<td id='kind"+i+"-"+j+"'></td>");
-            }
-          }
-        </script>
+        <tr><td>kind1</td></tr>
 
       </table>
+
 
     </main>
 
