@@ -25,15 +25,16 @@
       }
       function display(today, month, firstDay, Days)
       {
-        var iStr;
         document.write("<b>" +today.getFullYear()+ "年");
-        document.write((month+1) + "月のカレンダー</b>");
-        document.write("<table style='text-align:right;font-size:4pt'>");
+        document.write((month+1) + "月の<br/> カレンダー</b>");
+        document.write("<table style='text-align:right;font-size:9pt'>");
         document.write("<tr>");
         document.write("<th>日<th>月<th>火<th>水<th>木<th>金<th>土");
         document.write("</tr>");
+
         document.write("<tr>");
         var col = 0;
+        var iStr;
         for (var i = 0;i <firstDay;++i) {
           document.write("<td></td>");
           ++col;
@@ -42,10 +43,16 @@
           document.write("<td>");
 
           if (i == today.getDate()) {
+            iStr = i.toString().fontcolor("green");
+            document.write(iStr.big().bold() + "</td>");
+          } else if (col == 0) { //Sunday
             iStr = i.toString().fontcolor("red");
-            document.write(iStr+"</td>");
+            document.write(iStr + "</td>");
+          } else if (col == 6) { //Saturday
+            iStr = i.toString().fontcolor("blue");
+            document.write(iStr + "</td>");
           } else {
-            document.write(i+"</td>");
+            document.write(i + "</td>");
           }
           ++col;
           if (col == 7) {

@@ -12,7 +12,7 @@ header{
   border:solid 1px black;
 }
 #top{
-  width:600px;
+  width:auto;
   border:solid 1px blue;
 }
 .header-logo{
@@ -53,13 +53,16 @@ main#A{
 .extra{
   width:150px;
 }
+#extra-calender{
+  height:205px;
+}
 #extra{
   font-size: 100%;
   font-color: red;
   float:right;
-  width:150px;
+  height:auto;
   background-color:aqua;
-  border:2px solid blue;
+  /*border:2px solid blue;*/
 }
 main#B{
   margin-right:160px;
@@ -69,6 +72,7 @@ main#B{
   float:left;
   width:150px;
   border:2px solid red;
+  background-color:#f00000;
 }
 main#C{
   float:right;
