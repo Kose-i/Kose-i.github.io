@@ -2,30 +2,29 @@
   <head>
     <link rel="stylesheet" href="css/nutrition_checker.css">
     <title>nutrition-checker</title>
-    <script src="text/javascript">
+    <script type="text/javascript">
       function add_food()
       {
-        var tableBody = getElementById("sum_nutrition");
+        var tableBody = document.getElementById("sum_nutrition").parentNode;
 
-        var trTag = doucment.createElement("tr");
+        var trTag = document.createElement("tr");
 
-        document.body.insertBefore(trTag, tableBody);
+        var tdTag = document.createElement("td");
+        var tdText = document.createTextNode("text");
+        tdTag.appendChild(tdText);
+        trTag.appendChild(tdTag);
+
+        for (var i = 0;i < 63;++i) {
+          var tdTag = document.createElement("td");
+          trTag.appendChild(tdTag);
+        }
+
+        tableBody.appendChild(trTag);
       }
 
       function sum_food(){}
     </script>
 
-    <!-- >
-    <script type="text/javascript">
-      //for (var i = 0;i < 10;++i) {
-      //   document.write("<tr id='kind"+i+"'>");
-      //   document.write("<td>kind"+i+"</td>");
-      //   for (var j = 0;j < 63;++j) {
-      //     document.write("<td id='kind"+i+"-"+j+"'></td>");
-      //   }
-      // }
-    </script>
-    < -->
   </head>
 
   <body>
@@ -34,7 +33,7 @@
 
     <main>
 
-      <input type="button" value="Add" onclick="add_food"/>
+      <input type="button" value="Add" onClick="add_food()">
       <input type="button" value="Calc" onclick="sum_food">
 
       <table border="1" bordercolor="#333333" cellspacing="0" cellpadding="5">
@@ -113,7 +112,6 @@
             }
           </script>
         </tr>
-        <tr><td>kind1</td></tr>
 
       </table>
 
