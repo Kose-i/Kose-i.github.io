@@ -50,6 +50,9 @@ main#A{
   margin-right:-160px;
   width:100%;
 }
+.extra{
+  width:150px;
+}
 #extra{
   font-size: 100%;
   font-color: red;
