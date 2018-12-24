@@ -1,5 +1,6 @@
 <html>
   <head>
+    <link rel="stylesheet" href="css/stylesheet.css">
   </head>
   <body>
     <header>
@@ -92,6 +93,29 @@
         <p>ビット演算子, &, |, ^, <<</p>
         <p>比較演算子, ==, !=, <, >, </p>
         <p>sizeof(), typeid()などがあります.</p>
+      </section>
+      <section id="macro">
+        <h2>マクロ</h2>
+        <p>#defineと上部で宣言して値を書き込むことでその後のその変数にはその値が自動的に挿入されます.</p>
+        <pre>
+          <code>
+            #define SIZE 256
+            char t[SIZE];//t[256]と同じ宣言になる
+          </code>
+        </pre>
+        <p>また分割コンパイル時のインクルードガードを使用するときにも使用します</p>
+        <pre>
+          <p>--func.h--</p>
+          <code>
+            #ifndef compile_guard
+            #define compile_guard
+            void func();
+            #endif
+          </code>
+        </pre>
+      </section>
+      <section id="">
+        <h2></h2>
       </section>
 
     </main>
