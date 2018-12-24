@@ -7,20 +7,39 @@
     <main>
       <section id="variable">
         <h2>変数</h2>
-        <p>c言語では変数には型があります.変数とは数学で言うところのXに該当する部分です.</p>
+        <p>c言語では変数には型があります.<br/>変数とは数学で言うところのXに該当する部分です.</p>
         <ul id="define_variable">
-          <li>char<details><summary>size</summary>1バイト</details></li>
-          <li>int<details><summary>size</summary>4バイト</details></li>
-          <li>long<details><summary>size</summary>8バイト</details></li>
-          <li>float<details><summary>size</summary>8バイト</details></li>
-          <li>double<details><summary>size</summary>8バイト</details></li>
+          <details><summary>char</summary>
+            char は サイズが 1バイト
+            文字を表現するのに使います
+          </details>
+          <details><summary>int</summary>
+            int は サイズが 4バイト
+            整数を表現するのに使います
+          </details>
+          <details><summary>short</summary>
+            short は サイズが 4バイト
+            整数を表現するのに使います
+          </details>
+          <details><summary>long</summary>
+            long は サイズが 8バイト
+            大きい整数を表現するのに使います
+          </details>
+          <details><summary>float</summary>
+            float は サイズが 4バイト
+            小数を表現するのに使います
+          </details>
+          <details><summary>double</summary>
+            double は サイズが 8バイト
+            小数を表現するのに使います
+          </details>
         </ul>
-        <p>これらの演算は演算子を使用することで計算することができます</p>
+        <p>これらの演算は<a href="#operator">演算子(後述)</a>を使用することで計算することができます</p>
         <pre>
           <code>
             int a = 2;
             int b = 3;
-            int c = a*b;//cの中身は6です.
+            int c = a+b;//cの中身は5です.
           </code>
         </pre>
         <p>またユーザー定義型もあります.<br/>ユーザー定義型は使用者が定義し,通常の型として利用できます.</p>
@@ -41,6 +60,9 @@
         </pre>
       </section>
       <section></section>
+      <section id="operator">
+        <h2>演算子</h2>
+      </section>
 
     </main>
   </body>
