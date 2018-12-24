@@ -37,9 +37,14 @@
         <p>これらの演算は<a href="#operator">演算子(後述)</a>を使用することで計算することができます</p>
         <pre>
           <code>
-            int a = 2;
-            int b = 3;
+            int a;//宣言
+            a = 2;//初期化
+            int b = 3;//宣言と初期化
             int c = a+b;//cの中身は5です.
+            int c = a-b;//cの中身は-1です.
+            int c = a*b;//cの中身は6です.
+            int c = a/b;//cの中身は0です. ２÷３は０あまり２です.そのため整数では０となってしまいます.
+            int c = a%b;//cの中身は2です. ２÷３のあまりが来ると考えてください.
           </code>
         </pre>
         <p>またユーザー定義型もあります.<br/>ユーザー定義型は使用者が定義し,通常の型として利用できます.</p>
@@ -47,19 +52,23 @@
           <li>struct</li>
           <li>enum</li>
         </ul>
+        <p>これらの演算ではそれぞれの要素にしか<a href="#operator">演算子</a>を使用することはできません</p>
         <pre>
           <code>
             struct Parson{
               char* str;//名前
-              int old;
-            };
-            struct Parson kosei;
-            kosei.str = "kosei";
-            kosei.old = 19;
+              int old;//年齢
+            };//struct の宣言
+
+            struct Parson kosei;//変数の宣言
+            kosei.str = "kosei";//それぞれの値の初期化
+            kosei.old = 19;//それぞれの値の初期化
           </code>
         </pre>
       </section>
-      <section></section>
+      <section id="function">
+        <h2>関数</h2>
+      </section>
       <section id="operator">
         <h2>演算子</h2>
       </section>
