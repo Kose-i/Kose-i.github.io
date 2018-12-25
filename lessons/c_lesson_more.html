@@ -86,6 +86,35 @@
          */
         </code>
       </pre>
+      <p>また構造体内に関数を追加する場合,次のようにすることで構造体内に関数を追加することができます.</p>
+      <p>このときに関数の方に注意することが必要です.</p>
+      <p>以下がテストコードです.</p>
+      <pre>
+        <code>
+        #include < stdio.h >
+        
+        typedef struct Tmp{
+          char c_1;
+          char c_2;
+          int i_1;
+          int i_2;
+        }Tmp;
+        
+        int main(void) {
+          Tmp tmp;
+          printf("tmp.c_1:%p\n", &tmp.c_1);
+          printf("tmp.c_2:%p\n", &tmp.c_2);
+          printf("tmp.i_1:%p\n", &tmp.i_1);
+          printf("tmp.i_2:%p\n", &tmp.i_2);
+        }
+        /*実行結果
+        *tmp.c_1:0x7ffff15650ac
+        *tmp.c_2:0x7ffff15650ad
+        *tmp.i_1:0x7ffff15650b0
+        *tmp.i_2:0x7ffff15650b4
+        */
+        </code>
+      </pre>
     </section>
   </body>
 </html>
