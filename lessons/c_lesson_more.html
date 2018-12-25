@@ -92,27 +92,20 @@
       <pre>
         <code>
         #include < stdio.h >
+
+        void t_print(int a) {
+          printf("%d\n", a);
+        }
         
         typedef struct Tmp{
-          char c_1;
-          char c_2;
-          int i_1;
-          int i_2;
+          void (*print)(int);
         }Tmp;
         
         int main(void) {
-          Tmp tmp;
-          printf("tmp.c_1:%p\n", &tmp.c_1);
-          printf("tmp.c_2:%p\n", &tmp.c_2);
-          printf("tmp.i_1:%p\n", &tmp.i_1);
-          printf("tmp.i_2:%p\n", &tmp.i_2);
+          Tmp t;
+          t.print = t_print;
+          t.print(3);
         }
-        /*実行結果
-        *tmp.c_1:0x7ffff15650ac
-        *tmp.c_2:0x7ffff15650ad
-        *tmp.i_1:0x7ffff15650b0
-        *tmp.i_2:0x7ffff15650b4
-        */
         </code>
       </pre>
     </section>
