@@ -1,0 +1,36 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <session id="struct">
+      <h2>構造体について</h2>
+      <p>構造体はメンバー変数を持つ集合体です.</p>
+      <p>構造体はメンバー変数としてなどの int char 型の変数を持つことができます.</p>
+      <p>typedefを使用することで一般の方と同じようにstructなしで使用することもできます.<br/></p>
+      <p>構造体はポインタを経由することでアロー演算子を使用して各メンバにアクセスすることができます</p>
+      <p>以下がテストコードです</p>
+      <pre>
+        <code>
+        struct parson{
+          char* name;
+          unsigned int old;
+        };
+
+        typedef struct Tmp{
+          int tm;
+        }Tmp;
+        
+        int main(void) {
+          struct parson kosei;
+          kosei.name = "tamura";
+          kosei.old = 19;
+          Tmp* tmp;
+          tmp->tm = 2;
+        }
+        </code>
+      </pre>
+      <code>
+      </code>
+    </session>
+  </body>
+</html>
