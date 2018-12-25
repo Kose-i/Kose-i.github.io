@@ -2,7 +2,7 @@
   <head>
   </head>
   <body>
-    <session id="struct">
+    <section id="struct">
       <h2>構造体について</h2>
       <p>構造体はメンバー変数を持つ集合体です.</p>
       <p>構造体はメンバー変数としてなどの int char 型の変数を持つことができます.</p>
@@ -29,8 +29,63 @@
         }
         </code>
       </pre>
-      <code>
-      </code>
-    </session>
+      <p>更に構造体の変数のポインタを調べてみると,Allocatorがいいようにポインタの配置をしていることがわかります.</p>
+      <p>int は sizeof(int)より4Byteであることがわかり,そのためポインタでアクセスするときには4の整数倍に配置されていることが望ましく, char は sizeof(char)から1Byteであるため連続で配置することができます.<br/></p>
+      <p>そのため構造体の中のメンバの型を整理してから宣言することで,構造体のサイズを小さくすることができます.<br/></p>
+      <p>整理された場合</p>
+      <pre>
+        <code>
+        #include < stdio.h >
+        
+        typedef struct Tmp{
+          char c_1;
+          char c_2;
+          int i_1;
+          int i_2;
+        }Tmp;
+        
+        int main(void) {
+          Tmp tmp;
+          printf("tmp.c_1:%p\n", &tmp.c_1);
+          printf("tmp.c_2:%p\n", &tmp.c_2);
+          printf("tmp.i_1:%p\n", &tmp.i_1);
+          printf("tmp.i_2:%p\n", &tmp.i_2);
+        }
+        /*実行結果
+        tmp.c_1:0x7ffff15650ac
+        tmp.c_2:0x7ffff15650ad
+        tmp.i_1:0x7ffff15650b0
+        tmp.i_2:0x7ffff15650b4
+        */
+        </code>
+      </pre>
+      <p>順番を変えた場合</p>
+      <pre>
+        <code>
+        #include < stdio.h >
+
+        typedef struct Tmp{
+          char c_1;
+          int i_1;
+          char c_2;
+          int i_2;
+        }Tmp;
+
+        int main(void) {
+          Tmp tmp;
+          printf("tmp.c_1:%p\n", &tmp.c_1);
+          printf("tmp.i_1:%p\n", &tmp.i_1);
+          printf("tmp.c_2:%p\n", &tmp.c_2);
+          printf("tmp.i_2:%p\n", &tmp.i_2);
+        }
+        /*実行結果
+         *tmp.c_1:0x7ffd1b582ff0
+         *tmp.i_1:0x7ffd1b582ff4
+         *tmp.c_2:0x7ffd1b582ff8
+         *tmp.i_2:0x7ffd1b582ffc
+         */
+        </code>
+      </pre>
+    </section>
   </body>
 </html>
