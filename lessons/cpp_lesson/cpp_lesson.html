@@ -1,0 +1,51 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <section id="class">
+      <p>C言語とC++言語との大きな違いはクラスが導入されたことです.</p>
+      <p>C++言語では,オブジェクト指向プログラミングをします.</p>
+      <p>抽象化して使い回しををすることでコードを短くしバグの発生を抑えましょう.</p>
+      <p>自分も誤解や理解が不十分なこともあるかと思いますが,お付き合いください.</p>
+      <pre>
+        <code>
+          class parson{
+            private:
+              int credit_card_id;//クレジットカード番号
+              int address;//アドレス
+            public:
+              int name;//あなたの名前
+              int old;//あなたの年齢
+          };
+        </code>
+      </pre>
+      <p>private,publicというものがあります.</p>
+      <p>private (プライベート),つまり他人には公開されません.</p>
+      <p>一方, public とは他人に公開されます.</p>
+      <p>クラスの外からでもアクセスできるものはpublicな情報であり,</p>
+      <p>クラスの外からアクセスできないものはprivateな情報となるわけです.</p>
+      <p>privateにすることで,気づかない間に値が変わるということを防ぐことができます.<br/></p>
+      <br/>
+      <p>次は,関数を入れてみます.</p>
+      <pre>
+        <code>
+          class parson{
+            private:
+              int credit_card_id;
+              int address;
+            public:
+              int name;
+              int old;
+              void print_name(){
+                printf("%d\n", name);
+              }
+              void change_address(int new_address){
+                address = new_address;
+              }
+          };
+        </code>
+      </pre>
+      <p>このように,クラス内の関数はクラス内のどのpublic privateな値でも読み書きすることができます.</p>
+    </section>
+  </body>
+</html>
