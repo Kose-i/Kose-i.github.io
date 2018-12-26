@@ -41,30 +41,22 @@
         }
       }
 
-      /*for (var i = 0;i < 15;++i) {
-        Imgs[i] = "./img/github-profile.png";
-      }
-      Imgs[15] = "./img/blank.png";
-      */
-
       function shuffle()
       {
+        alert("shuffle!");
       }
-      var width = new Number();
+
+      var width = new Number();//全体の大きさ
       var height = new Number();
       function split(SourceImg)
       {
         for (var i = 0;i < 4;++i) {
+          var y = i*height/4;
           for (var j = 0;j < 4;++j) {
-          Imgs[i] = drawImage(SourceImg, x, y, width, height,  0, 0, width, height);
+            var x = j*width/4;
+          Imgs[i] = drawImage(SourceImg, x, y, width, height,  0, 0, width/4, height/4);
           }
         }
-      }
-      function cpImg(img1, img2)
-      {
-        var tmp = img1.src;
-        img1.src = img2.src;
-        img2.src = tmp;
       }
       function swap(img1, img2)
       {
@@ -94,6 +86,10 @@
     <input type="button" value="reset!" onClick="timerReset()">
     <form>
       <input type="text" id="Timer" size="10">
+    </form>
+
+    <form>
+      <input type="button" value="shuffle!" onClick="shuffle()">
     </form>
 
     <hr>
