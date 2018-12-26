@@ -8,7 +8,11 @@
       var Imgs = new Array(16);//answer
       var Pos = new Array(16);//public
       for (var i = 0;i < 16;++i) {
-        Imgs[i] = "./img/github-profile.png";
+        if (i == 15) {
+          Imgs[i] = "./img/blank_img.png";
+        } else {
+          Imgs[i] = "./img/github-profile.png";
+        }
       }
 
       /*for (var i = 0;i < 15;++i) {
@@ -28,9 +32,19 @@
           }
         }
       }
+      function swap(img1, img2)
+      {
+        var tmp = img1;
+        cpImg(img1,tmp);
+        cpImg(img2, img1);
+        cpImg(tmp, img2);
+        alert(typeof img1);
+      }
       function moveImg(img)
       {
+        alert(typeof img);
         alert(img.name);
+        swap(Imgs[img.name], Imgs[empty]);
       }
       function isAnswer()
       {
@@ -46,13 +60,47 @@
       {
         setTimeOut(checkCount, 1000);
       }
+      function test()
+      {
+        alert(typeof document.img[0]);
+      }
+      var timer = new Boolean(false);
+      var strTimer = new Number(0);
+      function timerStart()
+      {
+        timer = true;
+      }
+      function timerStop()
+      {
+        timer = false;
+      }
+      function timerReset()
+      {
+        strTimer = 0;
+        var Timer = document.getElementById("Timer");
+        Timer.value = strTimer.toString();
+      }
+      function timeRun()
+      {
+        setTimeout("timeRun()",1000);
+        if (timer == true) {
+          var Timer = document.getElementById("Timer");
+          Timer.value = strTimer.toString();
+          strTimer = strTimer+1;
+        }
+      }
     </script>
   </head>
 
-  <body>
+  <body onLoad="timeRun()">
     <header>slide_puzzle 15</header>
 
-    <input type="button" value="start!" onClick="split()">
+    <input type="button" value="start!" onClick="timerStart()">
+    <input type="button" value="stop!" onClick="timerStop()">
+    <input type="button" value="reset!" onClick="timerReset()">
+    <form>
+      <input type="text" id="Timer" size="10">
+    </form>
 
     <hr>
     <script>
