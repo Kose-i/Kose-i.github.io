@@ -43,7 +43,22 @@
 
       function shuffle()
       {
-        alert("shuffle!");
+        //alert("shuffle!");
+        for (var i = 0;i < 50;++i) {
+          var ImageCount = Math.floor(Math.random()*4);
+          if (ImageCount == 0) {
+            ImageCount = -4 + empty;
+          } else if (ImageCount == 1) {
+            ImageCount = -1 + empty;
+          } else if (ImageCount == 2) {
+            ImageCount = 1 + empty;
+          } else {
+            ImageCount = 4 + empty;
+          }
+          var movingImg = document.getElementById("img"+ImageCount);
+          moveImg(movingImg);
+        }
+        alert("finish shuffle!");
       }
 
       var width = new Number();//全体の大きさ
@@ -90,6 +105,7 @@
           empty = img.name;
         }
       }
+
       function isAnswer()
       {
       }
