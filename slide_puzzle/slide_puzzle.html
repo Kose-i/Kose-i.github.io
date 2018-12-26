@@ -3,6 +3,32 @@
     <link rel="stylesheet" href="css/stylesheet.css">
     <title>Slide_puzzle</title>
     <script type="text/javascript">
+      /*timer class*/
+      var timer = new Boolean(false);
+      var strTimer = new Number(0);
+      function timerStart()
+      {
+        timer = true;
+      }
+      function timerStop()
+      {
+        timer = false;
+      }
+      function timerReset()
+      {
+        strTimer = 0;
+        var Timer = document.getElementById("Timer");
+        Timer.value = strTimer.toString();
+      }
+      function timeRun()
+      {
+        setTimeout("timeRun()",1000);
+        if (timer == true) {
+          var Timer = document.getElementById("Timer");
+          Timer.value = strTimer.toString();
+          strTimer = strTimer+1;
+        }
+      }
 
       var empty = 15;
       var Imgs = new Array(16);//answer
@@ -32,19 +58,25 @@
           }
         }
       }
+      function cpImg(img1, img2)
+      {
+        var tmp = img1.src;
+        img1.src = img2.src;
+        img2.src = tmp;
+      }
       function swap(img1, img2)
       {
         var tmp = img1;
         cpImg(img1,tmp);
         cpImg(img2, img1);
         cpImg(tmp, img2);
-        alert(typeof img1);
       }
       function moveImg(img)
       {
-        alert(typeof img);
-        alert(img.name);
-        swap(Imgs[img.name], Imgs[empty]);
+        alert(img.id);
+        var objImg = document.getElementById("img15");
+        swap(img, objImg);
+        img.src = Imgs[empty];
       }
       function isAnswer()
       {
@@ -56,39 +88,7 @@
           }
         }
       }
-      function checkCount()
-      {
-        setTimeOut(checkCount, 1000);
-      }
-      function test()
-      {
-        alert(typeof document.img[0]);
-      }
-      var timer = new Boolean(false);
-      var strTimer = new Number(0);
-      function timerStart()
-      {
-        timer = true;
-      }
-      function timerStop()
-      {
-        timer = false;
-      }
-      function timerReset()
-      {
-        strTimer = 0;
-        var Timer = document.getElementById("Timer");
-        Timer.value = strTimer.toString();
-      }
-      function timeRun()
-      {
-        setTimeout("timeRun()",1000);
-        if (timer == true) {
-          var Timer = document.getElementById("Timer");
-          Timer.value = strTimer.toString();
-          strTimer = strTimer+1;
-        }
-      }
+
     </script>
   </head>
 
@@ -104,8 +104,11 @@
 
     <hr>
     <script>
+      document.write("<img id='img_test' name='test' src='"+Imgs[0]+"' onclick='moveImg(this)'/>");
+      document.write("<br/>");
+
       for (var i = 0;i < 16;++i) {
-        document.write("<img src='"+Imgs[i]+"' name='"+i+"' onclick='moveImg(this)'>");
+        document.write("<img id='img"+i+"' name='"+i+"'src='"+Imgs[i]+"' onclick='moveImg(this)'/>");
         if (i % 4 == 3) {
           document.write("<br/>");
         }
