@@ -50,6 +50,8 @@
       function shuffle()
       {
       }
+      var width = new Number();
+      var height = new Number();
       function split(SourceImg)
       {
         for (var i = 0;i < 4;++i) {
@@ -66,27 +68,19 @@
       }
       function swap(img1, img2)
       {
-        var tmp = img1;
-        cpImg(img1,tmp);
-        cpImg(img2, img1);
-        cpImg(tmp, img2);
+        var tmp = img1.src;
+        img1.src = img2.src;
+        img2.src = tmp;
       }
       function moveImg(img)
       {
         alert(img.id);
-        var objImg = document.getElementById("img15");
+        var objImg = document.getElementById("img"+empty);
         swap(img, objImg);
-        img.src = Imgs[empty];
+        empty = img.name;
       }
       function isAnswer()
       {
-        for (var i = 0;i < 16;++i) {
-          if (i == 15 && Pos[i].name == blank_img) {
-            return true;
-          } else if (Imgs[i].name != i) {
-            return false;
-          }
-        }
       }
 
     </script>
@@ -104,11 +98,8 @@
 
     <hr>
     <script>
-      document.write("<img id='img_test' name='test' src='"+Imgs[0]+"' onclick='moveImg(this)'/>");
-      document.write("<br/>");
-
       for (var i = 0;i < 16;++i) {
-        document.write("<img id='img"+i+"' name='"+i+"'src='"+Imgs[i]+"' onclick='moveImg(this)'/>");
+        document.write("<img id='img"+i+"' name='"+i+"' src='"+Imgs[i]+"' onclick='moveImg(this)'/>");
         if (i % 4 == 3) {
           document.write("<br/>");
         }
