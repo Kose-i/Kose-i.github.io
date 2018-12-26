@@ -66,10 +66,26 @@
       }
       function moveImg(img)
       {
-        alert(img.id);
-        var objImg = document.getElementById("img"+empty);
-        swap(img, objImg);
-        empty = img.name;
+        var isMovingOk = false;
+        var tmp =  empty - img.name;
+        // -4
+        //1  -1
+        // +4
+
+        if (tmp == -4 && img.name / 4 != 0) {
+          isMovingOk = true;
+        } else if (tmp == -1 && img.name % 4 != 0) {
+          isMovingOk = true;
+        } else if (tmp == 1 && img.name % 4 != 3) {
+          isMovingOk = true;
+        } else if (tmp == 4 && img.name / 4 != 3) {
+          isMovingOk = true;
+        }
+        if (isMovingOk) {
+          var objImg = document.getElementById("img"+empty);
+          swap(img, objImg);
+          empty = img.name;
+        }
       }
       function isAnswer()
       {
@@ -95,7 +111,7 @@
     <hr>
     <script>
       for (var i = 0;i < 16;++i) {
-        document.write("<img id='img"+i+"' name='"+i+"' src='"+Imgs[i]+"' onclick='moveImg(this)'/>");
+        document.write("<img id='img"+i+"' name='"+i+"' src='"+Imgs[i]+"' onclick='moveImg(this)'>");
         if (i % 4 == 3) {
           document.write("<br/>");
         }
