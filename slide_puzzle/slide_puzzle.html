@@ -37,7 +37,7 @@
         if (i == 15) {
           Imgs[i] = "./img/blank_img.png";
         } else {
-          Imgs[i] = "./img/github-profile.png";
+          Imgs[i] = "./img/github-profile"+i+".png";
         }
       }
 
@@ -54,7 +54,10 @@
           var y = i*height/4;
           for (var j = 0;j < 4;++j) {
             var x = j*width/4;
-          Imgs[i] = drawImage(SourceImg, x, y, width, height,  0, 0, width/4, height/4);
+            var pos = 4*i + j;
+            Imgs[pos] = drawImage(SourceImg, x, y, width/4, height/4,  0, 0, width/4, height/4);
+            var objImg = document.getElementById("img"+pos);
+            objImg.src = Imgs[pos];
           }
         }
       }
