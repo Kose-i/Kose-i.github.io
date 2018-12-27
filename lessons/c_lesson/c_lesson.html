@@ -44,12 +44,6 @@
           <li><a href="#function">return</a></li>
         </ul>
       </section>
-      <section id="for">
-      </section>
-      <section id="while">
-      </section>
-      <section id="do-while">
-      </section>
       <section id="variable">
         <h2>型</h2>
         <p>型とは,メモリのサイズを決めるためのものです.</p>
@@ -169,7 +163,7 @@
         </pre>
       </section>
       <section id="switch">
-        <h2>switch</h2>
+        <h2>switch文</h2>
         <p>switch文は,条件を多分岐に指定するときに使用します.</p>
         <p>breakを指定しなければその後もすべて実行されます.</p>
         <pre>
@@ -191,6 +185,29 @@
             }
           </code>
         </pre>
+      </section>
+      <section id="for">
+        <h2>for文</h2>
+        <p>for 文は繰り返し処理用の構文です.</p>
+        <p>for (/*初期化*/;/*継続条件*/;/*毎回実行処理*/)</p>
+        <pre>
+          <code>
+            for (int i = 0;i != 5;++i) {
+              printf("%d", i);
+            }
+          </code>
+        </pre>
+      </section>
+      <section id="while">
+        <h2>while文</h2>
+        <p>while(/*継続条件*/)</p>
+        <p>継続条件がtrueのとき処理は繰り返し実行されます.</p>
+      </section>
+      <section id="do-while">
+        <h2>do-while文</h2>
+        <p>do{}while(/*継続条件*/);</p>
+        <p>継続条件がtrueのとき処理は繰り返し実行されます.</p>
+        <p>while文との違いは必ず一回は実行される点です.</p>
       </section>
       <section id="macro">
         <h2>マクロ</h2>
