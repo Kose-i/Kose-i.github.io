@@ -10,43 +10,49 @@
         <h2>目標</h2>
         <p>予約語を理解できることを目標とします<br/></p>
         <ul>
-          <li>auto</li>
-          <li>void</li>
-          <li>int</li>
-          <li>char</li>
-          <li>short</li>
-          <li>long</li>
-          <li>double</li>
-          <li>float</li>
-          <li>struct</li>
-          <li>enum</li>
-          <li>union</li>
-          <li>static</li>
-          <li>signed</li>
-          <li>unsigned</li>
-          <li>extern</li>
-          <li>const</li>
-          <li>volatile</li>
-          <li>typedef</li>
-          <li>sizeof</li>
-          <li>if</li>
-          <li>else</li>
-          <li>break</li>
-          <li>continue</li>
-          <li>switch</li>
-          <li>case</li>
-          <li>default</li>
-          <li>do</li>
-          <li>for</li>
-          <li>while</li>
-          <li>goto</li>
-          <li>register</li>
-          <li>return</li>
+          <li><a href="#variable">auto</a></li>
+          <li><a href="#variable">void</a></li>
+          <li><a href="#variable">char</a></li>
+          <li><a href="#variable">int</a></li>
+          <li><a href="#variable">short</a></li>
+          <li><a href="#variable">long</a></li>
+          <li><a href="#variable">double</a></li>
+          <li><a href="#variable">float</a></li>
+          <li><a href="#variable">signed</a></li>
+          <li><a href="#variable">unsigned</a></li>
+          <li><a href="#variable">const</a></li>
+          <li><a href="#variable">static</a></li>
+          <li><a href="#variable">extern</a></li>
+          <li><a href="#variable">struct</a></li>
+          <li><a href="#variable">enum</a></li>
+          <li><a href="#variable">union</a></li>
+          <li><a href="#variable">volatile</a></li>
+          <li><a href="#variable">typedef</a></li>
+          <li><a href="#variable">sizeof</a></li>
+          <li><a href="#">if</a></li>
+          <li><a href="#">else</a></li>
+          <li><a href="#">break</a></li>
+          <li><a href="#">continue</a></li>
+          <li><a href="#">switch</a></li>
+          <li><a href="#">case</a></li>
+          <li><a href="#">default</a></li>
+          <li><a href="#">do</a></li>
+          <li><a href="#">for</a></li>
+          <li><a href="#">while</a></li>
+          <li><a href="#">goto</a></li>
+          <li><a href="#">register</a></li>
+          <li><a href="#">return</a></li>
         </ul>
       </section>
       <section id="variable">
-        <h2>変数</h2>
-        <p>c言語では変数には型があります.<br/>変数とは数学で言うところのXに該当する部分です.</p>
+        <h2>型</h>
+        <p>型とは,メモリのサイズを決めるためのものです.</p>
+        <p>intのサイズが知りたいときは,<a href="#operator">sizeof演算子</a>を使用して,<i>sizeof(int)</i> とすることでバイト数を知ることができます.</p>
+        <p>charは文字を表すときに使用されます.</p>
+        <p>int,short,longは整数を表すときに使用されます.</p>
+        <p>signed,unsignedは符号付き(signed)符号無し(unsigned)を選択できる修飾子です.</p>
+        <p>static,constは変化せず,定数とする修飾子です.</p>
+        <p>externは他のファイルからの宣言を読み込むことができます.</p>
         <ul id="define_variable">
           <details><summary>char</summary>
             char は サイズが 1バイト
@@ -106,6 +112,12 @@
           </code>
         </pre>
       </section>
+      <section id="parameter">
+        <h2>変数</h2>
+        <p>c言語では変数には型があります.<br/>変数とは数学で言うところのXに該当する部分です.</p>
+        <p>[型] [変数名];</p>
+        <p>として宣言します.</p>
+      </section>
       <section id="function">
         <h2>関数</h2>
         <p>関数とは数学で言うところのy=f(x)のｆに該当する部分です</p>
@@ -160,7 +172,7 @@
 
     </main>
     <footer>
-      <p>最終更新日2018/12/24</p>
+      <p>最終更新日2018/12/27</p>
     </footer>
   </body>
 </html>
