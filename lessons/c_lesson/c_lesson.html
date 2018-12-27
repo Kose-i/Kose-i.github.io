@@ -31,21 +31,21 @@
           <li><a href="#variable">sizeof</a></li>
           <li><a href="#">if</a></li>
           <li><a href="#">else</a></li>
-          <li><a href="#">break</a></li>
-          <li><a href="#">continue</a></li>
           <li><a href="#">switch</a></li>
           <li><a href="#">case</a></li>
           <li><a href="#">default</a></li>
-          <li><a href="#">do</a></li>
           <li><a href="#">for</a></li>
           <li><a href="#">while</a></li>
+          <li><a href="#">do</a></li>
+          <li><a href="#">break</a></li>
+          <li><a href="#">continue</a></li>
           <li><a href="#">goto</a></li>
           <li><a href="#">register</a></li>
           <li><a href="#">return</a></li>
         </ul>
       </section>
       <section id="variable">
-        <h2>型</h>
+        <h2>型</h2>
         <p>型とは,メモリのサイズを決めるためのものです.</p>
         <p>intのサイズが知りたいときは,<a href="#operator">sizeof演算子</a>を使用して,<i>sizeof(int)</i> とすることでバイト数を知ることができます.</p>
         <p>charは文字を表すときに使用されます.</p>
@@ -53,7 +53,8 @@
         <p>signed,unsignedは符号付き(signed)符号無し(unsigned)を選択できる修飾子です.</p>
         <p>static,constは変化せず,定数とする修飾子です.</p>
         <p>externは他のファイルからの宣言を読み込むことができます.</p>
-        <ul id="define_variable">
+        <p>typedef を使用することでエイリアス(別名)をかけることができます.</p>
+        <ul id="summary_variable">
           <details><summary>char</summary>
             char は サイズが 1バイト
             文字を表現するのに使います
