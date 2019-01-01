@@ -47,5 +47,34 @@
       </pre>
       <p>このように,クラス内の関数はクラス内のどのpublic privateな値でも読み書きすることができます.</p>
     </section>
+    <section id="template">
+      <h2>Template</h2>
+      <p>templateは抽象化して,具体化するという過程を踏んでいます.</p>
+      <p>typeを設定するのを省き,typeを動的に決定します.</p>
+      <p>typeを特別に設定することが可能です.</p>
+      <pre>
+        <code>
+          #include < iostream >
+          
+          template< typename T1 >
+          void print(const T1& print_target)
+          {
+            std::cout << print_target << '\n';
+          }
+          void print(const int& print_target)
+          {
+            std::cout << "int:" << print_target << '\n';
+          }
+          
+          int main(int argc, char** argv)
+          {
+            std::string str{"str"};
+            print(str);
+            auto temp = 2;
+            print(temp);
+          }
+        </code>
+      </pre>
+    </section>
   </body>
 </html>
