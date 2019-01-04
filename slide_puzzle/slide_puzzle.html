@@ -43,6 +43,7 @@
 
       function shuffle()
       {
+        alert("empty:"+empty);
         for (var i = 0;i < 50;++i) {
           var ImageCount = Math.floor(Math.random()*4);
           if (ImageCount == 0) {
@@ -55,6 +56,7 @@
             ImageCount = 4 + empty;
           }
           var movingImg = document.getElementById("img"+ImageCount);
+          alert(movingImg.name);
           moveImg(movingImg);
         }
         alert("finish shuffle!");
