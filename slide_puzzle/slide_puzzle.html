@@ -2,39 +2,14 @@
   <head>
     <link rel="stylesheet" href="css/stylesheet.css">
     <title>Slide_puzzle</title>
-    <script type="text/javascript">
-      /*timer class*/
-      var timer = new Boolean(false);
-      var strTimer = new Number(0);
-      function timerStart()
-      {
-        timer = true;
-      }
-      function timerStop()
-      {
-        timer = false;
-      }
-      function timerReset()
-      {
-        strTimer = 0;
-        var Timer = document.getElementById("Timer");
-        Timer.value = strTimer.toString();
-      }
-      function timeRun()
-      {
-        setTimeout("timeRun()",1000);
-        if (timer == true) {
-          var Timer = document.getElementById("Timer");
-          Timer.value = strTimer.toString();
-          strTimer = strTimer+1;
-        }
-      }
+    <script type="text/javascript" src="src/timer.js"/>
 
+    <script type="text/javascript">
       var empty = 15;
       var Imgs = new Array(16);//answer
       var Pos = new Array(16);//public
       for (var i = 0;i < 16;++i) {
-        if (i == 15) {
+        if (i == empty) {
           Imgs[i] = "./img/blank_img.png";
         } else {
           Imgs[i] = "./img/github-profile"+i+".png";
@@ -85,6 +60,7 @@
       }
       function moveImg(img)
       {
+        alert("empty:"+empty);
         var isMovingOk = false;
         var tmp =  empty - img.name;
         // -4
@@ -114,7 +90,8 @@
     </script>
   </head>
 
-  <body onLoad="timeRun()">
+  <!--body onLoad="timeRun()"-->
+  <body onLoad="setup()">
     <header>slide_puzzle 15</header>
 
     <input type="button" value="start!" onClick="timerStart()">
@@ -130,8 +107,11 @@
 
     <hr>
     <script>
+      document.write("<p>set</p>")
       for (var i = 0;i < 16;++i) {
-        document.write("<img id='img"+i+"' name='"+i+"' src='"+Imgs[i]+"' onclick='moveImg(this)'>");
+        //document.write("<img id='img"+i+"' name='"+i+"' src='"+Imgs[i]+"' onclick='moveImg(this)'>");
+        //document.write("<img id='img"+i+"' name='"+i+"' src='"+Imgs[i]+"' onclick='moveImg(this)'>");
+        document.write("<p>Imgs["+i+"]:</p>");
         if (i % 4 == 3) {
           document.write("<br/>");
         }
