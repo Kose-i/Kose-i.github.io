@@ -1,6 +1,6 @@
 # Kose-i.github.io
 
-[Webpage]:(https://kose-i.github.io)
+[Webpage](https://kose-i.github.io)
 
 ## Description
 
@@ -18,4 +18,4 @@
 
 ## 参考
 
-[HTML+CSSデザイン|基本原則、これだけ。【HTML5 & CSS3対応版】]:(http://urx2.nu/OtoF)
+[HTML+CSSデザイン|基本原則、これだけ。【HTML5 & CSS3対応版】](http://urx2.nu/OtoF)
