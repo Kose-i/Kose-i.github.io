@@ -1,0 +1,161 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="nutrition_checker.css">
+    <title>nutrition-checker</title>
+    <script type="text/javascript">
+      var foods = new Map();
+foods["アマランサス　玄穀"] = Array(0,358,1498,13.5,12.7,(12.5),6.0,5.0,1.18,1.48,2.10,(0),64.9,63.5,1.1,6.3,7.4,2.9,1,600,160,270,540,9.4,5.8,0.92,6.14,1,13,7,59,(0),0,2,0,2,0,(0),1.3,2.3,0.2,0.7,(0),0.04,0.14,1.0,0.58,(0),130,1.69,16.3,(0),0,0,0,0,0,0,0,0,0,0,0);
+foods["あわ　精白粒"]=Array(0,367,1538,13.3,11.2,10.0,4.4,4.1,0.67,0.52,2.75,(0),69.7,69.6,0.4,2.9,3.3,1.4,1,300,14,110,280,4.8,2.5,0.49,0.88,0,2,1,22,(0),(0),(0),(0),(0),(0),(0),0.6,0,2.2,0,(0),0.56,0.07,2.9,0.18,(0),29,1.83,14.4,0,0,0,0,0,0,0,0,0,0,0,0);
+
+      function alert_food()
+      {
+        var text = document.form1.select_food;
+        var num = text.selectedIndex;
+        return text.options[num].value;
+      }
+
+      var table_size = new Number(0);
+      function add_food()
+      {
+        var tableBody = document.getElementById("sum_nutrition").parentNode;
+        var trTag = document.createElement("tr");
+        var tdTag = document.createElement("td");
+        var food_kind = alert_food();
+        var tdFoodNameText = document.createTextNode(food_kind);
+        tdTag.appendChild(tdFoodNameText);
+        trTag.appendChild(tdTag);
+        for (var i = 0;i < 63;++i) {
+          var tdTag = document.createElement("td");
+          var tdFoodParamText = document.createTextNode(foods[food_kind][i]);
+          tdTag.appendChild(tdFoodParamText);
+          trTag.appendChild(tdTag);
+        }
+        tableBody.appendChild(trTag);
+        ++table_size;
+      }
+
+      function sum_food()
+      {
+        var start_rows = 2;
+        var TableTbody = document.getElementById("sum_nutrition").parentNode;
+        var sumTable = document.getElementById("sum_nutrition");
+        for (var i = 1;i < 64;++i) {
+          var sumCells = 0.0;
+          for (var j = 0;j < table_size;++j) {
+            var stringFloat = TableTbody.rows[start_rows + j].cells[i].innerHTML;
+            //console.log(parseFloat(stringFloat));
+            sumCells += parseFloat(stringFloat);
+            console.log(sumCells);
+          }
+          //alert(sumCells);
+          TableTbody.rows[1].cells[i].innerHTML = sumCells;
+        }
+      }
+    </script>
+
+  </head>
+
+  <body>
+    <header>
+    </header>
+
+    <main>
+      <form name="form1">
+        <select name="select_food">
+          <optgroup label="穀類">
+            <option>アマランサス　玄穀</option>
+            <option>あわ　精白粒</option>
+          </optgroup>
+        </select>
+      </form>
+
+      <form>
+        <input type="button" value="Add" onClick="add_food()">
+        <input type="button" value="Sum" onclick="sum_food()">
+      </form>
+
+      <table border="1" bordercolor="#333333" cellspacing="0" cellpadding="5">
+        <tr id="kind">
+          <th width="150">食品名</th>
+          <th>廃 棄 率</th>
+          <th>エネルギー（kcal）</th>
+          <th>エネルギー（kJ)</th>
+          <th>水   分</th>
+          <th>たんぱく質</th>
+          <th>アミノ酸組成によるたんぱく質</th>
+          <th>脂   質</th>
+          <th>トリアシルグリセロール当量</th>
+          <th>飽和脂肪酸</th>
+          <th>一価不飽和脂肪酸</th>
+          <th>多価不飽和脂肪酸</th>
+          <th>コレステロール</th>
+          <th>炭水化物</th>
+          <th>利用可能炭水化物（単糖当量）</th>
+          <th>水溶性食物繊維</th>
+          <th>不溶性食物繊維</th>
+          <th>食物繊維総量</th>
+          <th>灰   分</th>
+          <th>ナトリウム</th>
+          <th>カリウム</th>
+          <th>カルシウム</th>
+          <th>マグネシウム</th>
+          <th>リン</th>
+          <th>鉄</th>
+          <th>亜鉛</th>
+          <th>銅</th>
+          <th>マンガン</th>
+          <th>ヨウ素</th>
+          <th>セレン</th>
+          <th>クロム</th>
+          <th>モリブデン</th>
+          <th>レチノール</th>
+          <th>α-カロテン</th>
+          <th>β-カロテン</th>
+          <th>β-クリプトキサンチン</th>
+          <th>β-カロテン当量</th>
+          <th>レチノール活性当量</th>
+          <th>ビタミンD</th>
+          <th>α-トコフェロール</th>
+          <th>β-トコフェロール</th>
+          <th>γ-トコフェロール</th>
+          <th>δ-トコフェロール</th>
+          <th>ビタミンK</th>
+          <th>ビタミンB1</th>
+          <th>ビタミンB2</th>
+          <th>ナイアシン</th>
+          <th>ビタミンB6</th>
+          <th>ビタミンB12</th>
+          <th>葉酸</th>
+          <th>パントテン酸</th>
+          <th>ビオチン</th>
+          <th>ビタミンC</th>
+          <th>食塩相当量</th>
+          <th>アルコール</th>
+          <th>硝酸イオン</th>
+          <th>テオブロミン</th>
+          <th>カフェイン</th>
+          <th>タンニン</th>
+          <th>ポリフェノール</th>
+          <th>酢酸</th>
+          <th>調理油</th>
+          <th>有機酸</th>
+          <th>重量変化率</th>
+        </tr>
+
+        <tr id="sum_nutrition">
+          <td>合計</td>
+          <script>
+            for (var j = 0;j < 63;++j) {
+              document.write("<td></td>");
+            }
+          </script>
+        </tr>
+      </table>
+
+
+    </main>
+
+    <footer>
+    </footer>
+  </body>
+</html>

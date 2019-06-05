@@ -200,6 +200,7 @@ foods["雑穀混合品　五穀"]= Array(0,357,1492,12.9,12.6,10.3,2.8,2.5,0.52,
           var sumCells = 0.0;
           for (var j = 0;j < table_size;++j) {
             var stringFloat = TableTbody.rows[start_rows + j].cells[i].innerHTML;
+            Debug.Log(typeof(stringFloat));
             sumCells += parseFloat(stringFloat);
           }
             //alert(sumCells);
