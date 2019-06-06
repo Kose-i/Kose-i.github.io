@@ -34,17 +34,60 @@ foods["あわ　精白粒"]=Array(0,367,1538,13.3,11.2,10.0,4.4,4.1,0.67,0.52,2.
         ++table_size;
       }
 
+      /*ここからテスト*/
+
+      function tmp(e){
+        var len = e.length;
+        var point = e.length;
+        for (var i = 0;i < len;i++) {
+          if (e[i] == '.') {
+            point = i;
+            break;
+          }
+        }
+        return point;
+      }
+      
+      function Intsum(a, b) {
+        var d = parseFloat(a);
+        var e = parseFloat(b);
+      
+        var pointd = a.length - tmp(a) - 1;
+        var pointe = b.length - tmp(b) - 1;
+        var maxpoint = (pointd < pointe)?pointe:pointd;
+        var sumten = function(){
+          var sum = 1;
+          for (var i = 0;i < maxpoint;i++) {
+            sum *= 10;
+          }
+          return sum;
+        }();
+        console.log("sumten:", sumten)
+          var dd = parseInt(d*sumten);
+        var ee = parseInt(e*sumten);
+      
+        console.log(dd);
+        console.log(ee);
+        return (dd+ee)/sumten;
+      }
+      function sum_food_helper(a, b) {
+        var num = Intsum(a,b);
+        return num.toString();
+      }
+
+      /*ここまでテスト*/
+
       function sum_food()
       {
         var start_rows = 2;
         var TableTbody = document.getElementById("sum_nutrition").parentNode;
         var sumTable = document.getElementById("sum_nutrition");
         for (var i = 1;i < 64;++i) {
-          var sumCells = 0.0;
+          var sumCells = "0.0";
           for (var j = 0;j < table_size;++j) {
             var stringFloat = TableTbody.rows[start_rows + j].cells[i].innerHTML;
             //console.log(parseFloat(stringFloat));
-            sumCells += parseFloat(stringFloat);
+            sumCells = sum_food_helper(sumCells, stringFloat);
             console.log(sumCells);
           }
           //alert(sumCells);
