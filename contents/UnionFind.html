@@ -1,31 +1,34 @@
 <div id="contents">
-    <pre><code>
-        #include &lt;vector&gt;
-        struct UnionFind {
-            UnionFind(const int& n) : n_(n), parents(n) {
-                for (int i=0;i&lt;n;++i) parents[i] = i;
-            }
-            void merge(const int& l, const int& r) {
-                int lf = find(l);
-                int rf = find(r);
-                parents[rf] = lf;
-            }
-            int find(const int& id) {
-                if (parents[id] == id) return id;
-                return parents[id] = find(parents[id]);
-            }
-            vector&lt;vector&lt;int&gt;&gt; groups() {
-                map&lt;int, vector&lt;int&gt;&gt; mp;
-                for (int i=0;i&lt;n_;++i) {
-                    mp[find(i)].push_back(i);
-                }
-                vector&lt;vector&lt;int&gt;&gt; ans;
-                for (const auto& e : mp) ans.push_back(e.second);
-                return ans;
-            }
-            private:
-              int n_;
-              vector&lt;int&gt; parents;
+    <div id="UnionFind-code"">
+        <pre><code>
+#include &lt;vector&gt;
+struct UnionFind {
+    UnionFind(const int& n) : n_(n), parents(n) {
+        for (int i=0;i&lt;n;++i) parents[i] = i;
+    }
+    void merge(const int& l, const int& r) {
+        int lf = find(l);
+        int rf = find(r);
+        parents[rf] = lf;
+    }
+    int find(const int& id) {
+        if (parents[id] == id) return id;
+        return parents[id] = find(parents[id]);
+    }
+    vector&lt;vector&lt;int&gt;&gt; groups() {
+        map&lt;int, vector&lt;int&gt;&gt; mp;
+        for (int i=0;i&lt;n_;++i) {
+            mp[find(i)].push_back(i);
         }
-    </code></pre>
+        vector&lt;vector&lt;int&gt;&gt; ans;
+        for (const auto& e : mp) ans.push_back(e.second);
+        return ans;
+    }
+    private:
+      int n_;
+      vector&lt;int&gt; parents;
+}
+        </code></pre>
+    </div>
+    このコードを用いて実装したコードがこちらです
 </div>
