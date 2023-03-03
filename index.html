@@ -11,10 +11,21 @@
             if (url == undefined) {
               $('#contents').load('index.html');
             } else {
-              $('#contents').load("contents/math.html #contents");
+              $('#contents').load("contents/"+url+" #contents");
             }
           }
-          </script>
+        </script>
+        <style>
+        .sidebar_fixed {
+          position: sticky;
+          top: 60px;
+          padding: 40px;
+          margin: 10px;
+        }
+        .sidebar_content {
+          margin-bottom: 100px;
+        }
+        </style>
     </head>
 
     <body>
@@ -23,7 +34,35 @@
           <a class="navbar-brand text-white" href="#">KoseTの競技プログラミング辞書</a>
         </nav>
 
-        <div>
+        <div class="container" style="padding-left:5%;margin:0%;">
+          <div class="row">
+            <div class="col-3">
+              <div class="sidebar_content">
+                <li>
+                  <ul>数学関係
+                    <ul>
+                      <li><a href="javascript:OnLinkClick('GCD.html')">ユークリッドの互除法</a></li>
+                    </ul>
+
+                  </ul>
+                  <ul>グループ化
+                    <ul>
+                      <li><a href="javascript:OnLinkClick('UnionFind.html')">Unionfind</a></li>
+                    </ul>
+                  </ul>
+                  <ul>木構造</ul>
+                  <ul>幅優先探索</ul>
+                  <ul>深さ優先探索</ul>
+                  <ul>ダイクストラ法</ul>
+                  <ul>クラスカル法</ul>
+                </li>
+              </div>
+              <div id="contents"></div>
+            </div>
+          </div>
+        </div>
+
+        <!--div>
           <li>
             <ul><a href="javascript:OnLinkClick('math.html');">数学関係</a></ul>
             <ul><a href="javascript:OnLinkClick();">グループ化</a></ul>
@@ -35,6 +74,6 @@
           </li>
         </div>
         <div id="contents">
-        </div>
+        </div-->
     </body>
  </html>
