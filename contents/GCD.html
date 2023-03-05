@@ -1,8 +1,19 @@
 <div id="contents">
+    <p>aとbの最大公約数を求めるプログラム</p>
+
     <pre><code>
 long long gcd(const long long& a, const long long& b) {
     if (b == 0) return a;
     return gcd(b, a%b);
 }
     </code></pre>
+
+    <p>最小公倍数を求めるプログラム</p>
+
+    <pre><code>
+long long lcm(const long long& a, const long long& b) {
+    return a*(b/gcd(a,b));
+}
+    </code></pre>
+
 </div>
