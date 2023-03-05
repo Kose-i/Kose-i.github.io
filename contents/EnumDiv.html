@@ -1,0 +1,21 @@
+<div id="contents">
+    <p>ある正整数nが与えられたときに、約数を全列挙するプログラム</p>
+
+    <pre><code>
+#include &lt;algorithm&gt;
+#include &lt;vector&gt;
+
+vector&lt;long long&gt; enum_div(const long long& n) {
+    vector&lt;long long&gt; ans;
+    for (long long i=1;i*i&lt;=n;++i) {
+        if (n % i == 0) {
+            ans.push_back(i);
+            if (i != n/i) ans.push_back(n/i);
+        }
+    }
+    sort(ans.begin(), ans.end());
+    return ans;
+}
+    </code></pre>
+
+</div>
