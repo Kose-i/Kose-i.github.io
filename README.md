@@ -1,5 +1,6 @@
 # Kose-i.github.io
 
+[リンク](https://kose-i.github.io/index.html)
 My test Website.
 
 # Use jQuery
