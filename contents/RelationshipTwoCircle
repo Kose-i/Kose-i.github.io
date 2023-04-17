@@ -1,0 +1,31 @@
+<div id="contents">
+    <p>二つの円の関係を求めるプログラム</p>
+
+    <pre><code>
+struct CircleType {
+  long long x, y;
+  long long r;
+};
+
+int relationship_two_circle(const CircleType& c1, const CircleType& c2) {
+  /**
+   * 0 =&lt; not connect
+   * 1 =&lt; connect one point
+   * 2 =&lt; connect two points
+   * 3 =&lt; c1 in c2 (not connect)
+   * 4 =&lt; c2 in c1 (not connect)
+   * 5 =&lt; same
+  */
+  if (c1.x==c2.x && c1.y==c2.y && c1.r==c2.r) return 5;
+  long long distance_pow = (c1.x-c2.x)*(c1.x-c2.x) + (c1.y-c2.y)*(c1.y-c2.y);
+  if ((c1.r+c2.r)*(c1.r+c2.r) &lt; distance_pow) return 0;
+  if (distance_pow &lt; (c1.r-c2.r)*(c1.r-c2.r)) return 0;
+  if (distance_pow == (c1.r-c2.r)*(c1.r-c2.r)) return 1;
+  if (distance_pow == (c1.r+c2.r)*(c1.r+c2.r)) return 1;
+  if (c2.r &lt; c1.r && distance_pow &lt; c1.r*c1.r && distance_pow &lt; (c1.r-c2.r)*(c1.r-c2.r)) return 4;
+  if (c1.r &lt; c2.r && distance_pow &lt; c2.r*c2.r && distance_pow &lt; (c1.r-c2.r)*(c1.r-c2.r)) return 3;
+  return 2;
+}
+    </code></pre>
+
+</div>
