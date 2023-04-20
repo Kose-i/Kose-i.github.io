@@ -1,0 +1,23 @@
+<div id="contents">
+    <p>左上から平面操作をする際の順番を返すプログラム</p>
+
+    <pre><code>
+    vector&lt;pair&lt;int,int&gt;&gt; oblique_scanning(const int& h, const int& w) {
+  /**
+   * | 1| 2| 4| 7|
+   * | 3| 5| 8|10|
+   * | 6| 9|11|12|
+  */
+  vector&lt;pair&lt;int,int&gt;&gt; ans;
+  for (int i=0;i&lt;h+w-1;++i) {
+    int s = min(w-1, i);
+    int f = i - s;
+    for (;f &lt; h && 0 &lt;= s;++f, --s) {
+      ans.push_back(make_pair(f,s));
+    }
+  }
+  return ans;
+}
+    </code></pre>
+
+</div>
